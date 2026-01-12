@@ -1,71 +1,89 @@
-Forecasting Platform - Version 1
-================================
+Forecasting Platform Documentation - v1
+=======================================
 
-This project is a full-stack time series forecasting platform (Version 1) designed to train, evaluate, explain, and deploy predictive models on structured temporal datasets.
-
-Version 1 focuses on robust one-step forecasting, model benchmarking, and explainability, while supporting both single-entity and multi-entity datasets.
-
-The platform is suitable for industrial forecasting, predictive maintenance, and data-driven decision support systems.
-
-Table of contents
------------------
-- `Overview <index.html#id1>`_
-- `Architecture <index.html#id2>`_
-- `Installation & Setup <index.html#id3>`_
-- `Backend API Reference <index.html#id4>`_
-- `Frontend User Guide <index.html#id5>`_
-- `Module Documentation <index.html#id6>`_
-- `Database Schema  <index.html#id7>`_
-- `Deployment Guide <index.html#id8>`_
-- `Troubleshooting <index.html#id9>`_
-- `Future Work <index.html#id10>`_
-
-Overview
-========
-
-Technology Stack
+Project Overview
 ----------------
-**• Backend**
 
-- `FastAPI`
-- `TensorFlow/Keras (deep learning)`
-- `Scikit-learn, XGBoost, LightGBM, CatBoost (ML models)`
-- `SHAP (explainability)`
-- `Supabase (database + storage)`
+Forecasting-Platform is a full-stack predictive analytics system designed to manage
+the complete lifecycle of forecasting workflows — from raw data ingestion to
+trained models, predictions, and explainable insights.
 
-**• Frontend**
+The platform provides a structured environment where datasets, preprocessing steps,
+models, predictions, and explanations are explicitly tracked and linked.
+This approach reduces ambiguity, improves reproducibility, and supports
+decision-making in forecasting-oriented projects.
 
-- `Next.js 14+ (React)`
-- `TypeScript`
-- `Tailwind CSS`
-- `Recharts (data visualization)`
-- `Supabase Browser Client`
+Added Value
+^^^^^^^^^^^
+
+Forecasting-Platform focuses on workflow consistency rather than isolated models:
+
+- End-to-end dataset lifecycle management
+- Decoupled preprocessing and training pipelines
+- Automated and reproducible model benchmarking (AutoML)
+- Time-aware validation strategies
+- Prediction services with configurable horizons
+- Built-in explainability for interpretability and trust
+- Persistent storage of datasets and model artifacts
 
 
-Architecture
-============
+Problem Statement & Motivation
+------------------------------
+
+Forecasting workflows are often fragmented across notebooks, scripts, and ad-hoc
+deployment solutions. This fragmentation results in:
+
+- Limited reproducibility
+- Poor traceability between data, models, and outputs
+- Inconsistent evaluation protocols
+- Lack of explainability for stakeholders
+- High friction when operationalizing models
+
+Forecasting-Platform addresses these issues by consolidating the forecasting lifecycle
+into a single system that enforces structure without restricting modeling flexibility.
 
 
-Installation & Setup
-====================
+Design Goals & Principles
+-------------------------
 
-Backend API Reference
-=====================
+Reproducibility
+^^^^^^^^^^^^^^^
 
-Frontend User Guide
-===================
+All datasets, preprocessing steps, models, metrics, and explanations are tracked
+to ensure results can be reproduced and audited.
 
-Module Documentation
-====================
+Separation of Concerns
+^^^^^^^^^^^^^^^^^^^^^^
 
-Database Schema
-===============
+Ingestion, preprocessing, training, prediction, and explainability are treated as
+distinct stages with clear interfaces.
 
-Deployment Guide
-================
+Model-Agnostic Design
+^^^^^^^^^^^^^^^^^^^^^
 
-Troubleshooting
-===============
+The system supports heterogeneous model families (tabular and sequence-based)
+without coupling workflows to a specific algorithm.
 
-Future Work
-===========
+Explainability by Design
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Explainability is treated as a first-class output rather than an optional extension.
+
+Operational Practicality
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The platform is designed to move beyond exploratory notebooks toward structured,
+operable forecasting systems.
+
+
+Documentation Map
+-----------------
+
+.. toctree::
+   :maxdepth: 2
+
+   setup
+   architecture
+   pipeline
+   endpoints
+   modules/index
