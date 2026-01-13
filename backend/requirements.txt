@@ -1,0 +1,15 @@
+pandas
+scikit-learn
+numpy
+fastapi
+uvicorn[standard]
+python-multipart
+supabase
+openpyxl
+pyarrow
+python-dotenv
+xgboost
+lightgbm
+catboost
+tensorflow
+shap
